@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Toggler</title>
+
+
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .Card {
+            width: 170px;
+            height: 350px;
+            border: 2px solid #4d0039;
+            border-radius: 10px;
+            margin-top: 30px;
+            margin-left: 50px;
+            box-shadow: 10px 10px 10px 2px #b3b3b3;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .Apple-image {
+            width: 170px;
+            height: 170px;
+            border-radius: 10px 10px 0px;
+            display: inline-block;
+
+        }
+
+        .Hp-image {
+            width: 170px;
+            height: 170px;
+            border-radius: 10px 10px 0px;
+            display: inline-block;
+
+        }
+
+        .Dell-image {
+            width: 170px;
+            height: 170px;
+            border-radius: 10px 10px 0px;
+            display: inline-block;
+
+        }
+
+        .Asus-image {
+            width: 170px;
+            height: 170px;
+            border-radius: 10px 10px 0px;
+            display: inline-block;
+
+        }
+
+        .product-title {
+            font-size: 17px;
+            margin-left: 10px;
+        }
+
+        .product-description {
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 10px;
+            margin: 10px 10px;
+        }
+
+        .product-price {
+            padding-left: 20px;
+            font-size: 10px;
+        }
+
+        .btn-grad {
+            background-image: linear-gradient(to right, #24C6DC 0%, #514A9D 51%, #24C6DC 100%);
+            margin: 10px;
+            margin-left: 40px;
+            padding: 5px 10px;
+            text-align: center;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            border: none;
+        }
+
+        .btn-grad:hover {
+            background-position: right center;
+            color: #fff;
+            text-decoration: none;
+
+        }
+
+        .border {
+            border: 3px solid red;
+        }
+
+        .active {
+            border: 3px solid black;
+        }
+
+        .theme-icon {
+            border-radius: 5px;
+            padding: 5px;
+            height: 30px;
+            width: 30px;
+            cursor: pointer;
+            margin-left: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .theme-dark {
+            background-color: black;
+            color: white;
+        }
+
+        .theme-light {
+            background-color: white;
+            color: black;
+        }
+
+        .card-1 {
+            width: 170px;
+            height: 350px;
+            border: 2px solid #4d0039;
+            border-radius: 10px;
+            margin-top: 30px;
+            margin-left: 110px;
+            box-shadow: 10px 10px 10px 2px #b3b3b3;
+            display: inline-block;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body id="body">
+
+    <div>
+        <img src="dark-mode.png" class="theme-icon" id="img-dark" onclick="darkMode()">
+        <img src="light-mode.png" class="theme-icon active" id="img-light" onclick="lightMode()">
+    </div>
+
+    <div class="card-1">
+        <img src="apple-laptop.png" class="Apple-image">
+        <h3 class="product-title"><b>"Apple Laptop"</b></h3>
+        <p class="product-description">
+            Apple MacBook Pro is a macOS laptop. It is powered by a Core i5 processor and it comes with 12GB of RAM.
+        </p>
+
+        <p class="product-price"><del>₹ 1,50,990/-</del> <b>₹ 1,27,999/-</b></p>
+
+        <button class="btn-grad">Order Now</button>
+
+    </div>
+
+    <div class="Card ">
+        <img src="hp-laptop.png" class="Hp-image">
+        <h3 class="product-title "><b>"Hp Laptop"</b></h3>
+        <p class="product-description ">
+            Hp MacBook Pro is a macOS laptop. It is powered by a Core i5 processor and it comes with 12GB of RAM.
+        </p>
+
+        <p class="product-price "><del>₹ 1,00,990/-</del> <b>₹ 90,999/-</b></p>
+
+        <button class="btn-grad">Order Now</button>
+
+    </div>
+
+    <div class="Card">
+        <img src="dell-laptop.png" class="Dell-image">
+        <h3 class="product-title "><b>"Dell Laptop"</b></h3>
+        <p class="product-description ">
+            Dell MacBook Pro is a macOS laptop. It is powered by a Core i5 processor and it comes with 12GB of RAM.
+        </p>
+
+        <p class="product-price "><del>₹ 1,00,990/-</del> <b>₹ 90,999/-</b></p>
+
+        <button class="btn-grad">Order Now</button>
+
+    </div>
+
+    <div class="Card">
+        <img src="Asus-laptop.png" class="Asus-image">
+        <h3 class="product-title "><b>"Asus Laptop"</b></h3>
+        <p class="product-description ">
+            Asus MacBook Pro is a macOS laptop. It is powered by a Core i5 processor and it comes with 12GB of RAM.
+        </p>
+
+        <p class="product-price "><del>₹ 1,00,990/-</del> <b>₹ 90,999/-</b></p>
+        <button class="btn-grad">Order Now</button>
+
+
+    </div>
+
+    <script>
+        function darkMode() {
+            const imgDark = document.getElementById("img-dark");
+            imgDark.classList.add("active");
+
+            const imgLight = document.getElementById("img-light");
+            imgLight.classList.remove("active");
+
+            const bodyElement = document.getElementById("body");
+            bodyElement.className = "theme-dark";
+
+            const btnBorder = document.getElementById("img-dark");
+            btnBorder.classList.add("border");
+        }
+        function lightMode() {
+            const imgDark = document.getElementById("img-dark");
+            imgDark.classList.remove("active");
+
+            const imgLight = document.getElementById("img-light");
+            imgLight.classList.add("active");
+
+            const bodyElement = document.getElementById("body");
+            bodyElement.className = "theme-light";
+
+            const btnBorder = document.getElementById("img-dark");
+            btnBorder.classList.remove("border");
+        }
+    </script>
+
+
+
+</body>
+
+</html>
